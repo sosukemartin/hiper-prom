@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Checklist</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+  <style>
+    /* --- Estilo da tabela Posicionamento/Layout --- */
+    #posicionamento-section {
+      margin-top: 20px;
+    }
+    #posicionamento-section table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    #posicionamento-section th,
+    #posicionamento-section td {
+      padding: 8px 10px;
+      vertical-align: middle;
+      text-align: left;
+    }
+    #posicionamento-section tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    #posicionamento-section th {
+      font-size: 15px;
+      text-align: center;
+      padding-bottom: 12px;
+    }
+    #posicionamento-section td:first-child {
+      width: 70%;
+    }
+    #posicionamento-section td:nth-child(2),
+    #posicionamento-section td:nth-child(3) {
+      text-align: center;
+      width: 15%;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1><center>C H E C K L I S T</center></h1>
+    </header>
+
+    <main>
+      <!-- Informações da Loja -->
+      <section class="form-section" id="store-info">
+        <h2>Informações da Loja</h2>
+        <label>Loja tem contrato?
+          <select id="contract">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </label>
+        <label>Nome da Loja
+          <input id="storeName" type="text" placeholder="Ex: Loja ABC" />
+        </label>
+        <label>Número
+          <input id="storeNumber" type="text" inputmode="numeric" placeholder="Nº da loja" />
+        </label>
+        <label>Supervisor
+          <input id="supervisor" type="text" placeholder="Nome do supervisor" />
+        </label>
+        <label>Promotor
+          <input id="promoter" type="text" placeholder="Nome do promotor" />
+        </label>
+
+        <label>Tipo de Mercado
+          <select id="marketType">
+            <option value="hiper">HIPER</option>
+            <option value="super">SUPER</option>
+            <option value="mini">MINI</option>
+            <option value="cc">C&C</option>
+          </select>
+        </label>
+      </section>
+
+      <!-- Produtos -->
+      <section id="beers-section">
+        <h2>Produtos</h2>
+        <div id="beers-list"></div>
+      </section>
+
+
+<section id="seguimentos">
+  <div class="seguimentos-container">
+    <div class="seguimento">
+      <img src="CRAFT.png" alt="Craft">
+      <div class="toggle-simnao" id="atingeCraft">
+        <label><strong>Atinge o Seguimento CRAFT?</strong></label>
+        <button class="opt sim" id="craftSim">SIM</button>
+        <button class="opt nao active" id="craftNao">NÃO</button>
+      </div>
+    </div>
+
+    <div class="seguimento">
+      <img src="PREMIUM.png" alt="Premium">
+      <div class="toggle-simnao" id="atingePremium">
+        <label><strong>Atinge o Seguimento PREMIUM?</strong></label>
+        <button class="opt sim" id="premiumSim">SIM</button>
+        <button class="opt nao active" id="premiumNao">NÃO</button>
+      </div>
+    </div>
+
+    <div class="seguimento">
+      <img src="MAINSTEAM.png" alt="Mainstream">
+      <div class="toggle-simnao" id="atingeMainstream">
+        <label><strong>Atinge o Seguimento MAINSTEAM?</strong></label>
+        <button class="opt sim" id="mainSim">SIM</button>
+        <button class="opt nao active" id="mainNao">NÃO</button>
+      </div>
+    </div>
+  </div>
+</section>
+      <!-- POSICIONAMENTO/LAYOUT COMO TABELA -->
+      <section id="posicionamento-section">
+        <h2>Posicionamento/Layout</h2>
+        <table>
+          <thead>
+          </thead>
+          <tbody id="posicionamento-list"></tbody>
+        </table>
+      </section>
+
+
+<section class="form-section" id="visibilidade-section">
+  <h2>VISIBILIDADE</h2>
+  <img src="vis.png" alt="Visibilidade" class="vis-img">
+  <div class="pergunta">
+  <h3>Atinge a meta de pontos extras?</h3>
+  <div class="toggle-simnao">
+    <button id="metaSim" class="opt sim">SIM</button>
+    <button id="metaNao" class="opt nao active">NÃO</button>
+  </div>
+</div>
+</section>
+
+
+
+      <!-- Resumo -->
+      <section class="summary">
+        <label class="precificacao-label">Atinge a precificação?</label>
+        <div class="toggle-simnao precificacao-toggle">
+          <button class="opt sim" id="precificacaoSim">SIM</button>
+          <button class="opt nao active" id="precificacaoNao">NÃO</button>
+        </div>
+
+        <h3>Resumo de Pontuação</h3>
+        <div id="scoreDisplay">Total: 0.0 pontos</div>
+      </section>
+
+      <div class="actions">
+        <button id="finishBtn">FINALIZAR E EMITIR PDF</button>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

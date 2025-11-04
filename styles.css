@@ -1,0 +1,318 @@
+:root {
+  --heineken-green: #00854A;
+  --heineken-dark: #003B2C;
+  --heineken-light: #00A65C;
+  --bg: #f5f7f5;
+  --card: #ffffff;
+  --muted: #555;
+  --accent: var(--heineken-green);
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--heineken-dark);
+}
+
+/* === APP CONTAINER === */
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px 100px;
+}
+
+/* === CABEÇALHO === */
+header {
+  background: linear-gradient(180deg, var(--heineken-green) 0%, var(--heineken-dark) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 48px 12px 40px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+header::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  margin: 14px auto 0;
+}
+
+/* === SEÇÕES GERAIS === */
+section {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px 14px;
+  margin-top: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+  color: var(--heineken-dark);
+  font-size: 16px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  border-left: 5px solid var(--heineken-green);
+  padding-left: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* === CAMPOS DO FORMULÁRIO === */
+.form-section label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.form-section input[type=text],
+.form-section select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #dfe5df;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.form-section input:focus,
+.form-section select:focus {
+  border-color: var(--heineken-green);
+  outline: none;
+}
+
+/* === PRODUTOS === */
+.beer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f9faf9;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #e6ebe7;
+  margin-bottom: 10px;
+  transition: transform 0.15s ease;
+}
+.beer:hover {
+  transform: translateY(-3px);
+}
+
+.beer img {
+  width: 82px;
+  height: 82px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #eee;
+}
+
+.beer h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--heineken-dark);
+}
+
+.beer p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+/* === BOTÕES SIM / NÃO === */
+.toggle-simnao {
+  display: inline-flex;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #cfd4cf;
+}
+
+.toggle-simnao button {
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  color: var(--heineken-dark);
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.toggle-simnao button.active {
+  background: var(--heineken-green);
+  color: #fff;
+}
+
+.toggle-simnao button:hover {
+  background: var(--heineken-light);
+  color: #fff;
+}
+
+/* === CHECKBOXES === */
+.small-check {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.small-check label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+}
+
+/* === TABELA POSICIONAMENTO === */
+#posicionamento-section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+#posicionamento-section tr:nth-child(even) {
+  background: #f6f9f6;
+}
+
+#posicionamento-section td {
+  padding: 8px 10px;
+  text-align: left;
+}
+
+#posicionamento-section td:first-child {
+  font-weight: 600;
+  color: var(--heineken-dark);
+}
+
+#posicionamento-section td:nth-child(2),
+#posicionamento-section td:nth-child(3) {
+  text-align: center;
+}
+
+/* === SEÇÃO DE PONTUAÇÃO === */
+.summary {
+  text-align: center;
+}
+
+.summary h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--heineken-dark);
+  margin-top: 10px;
+}
+
+#scoreDisplay {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--heineken-green);
+  margin-top: 6px;
+}
+
+/* === PRECIFICAÇÃO === */
+.precificacao-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--heineken-dark);
+}
+
+.precificacao-toggle {
+  display: inline-flex;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.precificacao-toggle button {
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  color: var(--heineken-dark);
+  text-transform: uppercase;
+}
+
+.precificacao-toggle button.active {
+  background: var(--heineken-green);
+  color: #fff;
+}
+
+/* === BOTÃO FINAL === */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#finishBtn {
+  background: var(--heineken-green);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 14px rgba(0, 133, 74, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#finishBtn:hover {
+  background: var(--heineken-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 133, 74, 0.3);
+}
+
+/* === RESPONSIVO === */
+@media (min-width: 460px) {
+  .app {
+    margin-top: 20px;
+  }
+}
+.seguimentos-container {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 30px; /* espaçamento entre cada segmento */
+  flex-wrap: wrap; /* permite quebra de linha se necessário */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.seguimento {
+  text-align: center;
+}
+
+.seguimento img {
+  max-width: 350px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px; /* centraliza e dá espaço abaixo da imagem */
+}
+#visibilidade-section img.vis-img {
+  display: block;
+  margin: 10px auto 15px; /* centraliza e dá espaçamento */
+  max-width: 430px;       /* ajusta tamanho */
+  height: auto;
+}
